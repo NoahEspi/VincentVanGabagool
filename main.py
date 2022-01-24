@@ -6,7 +6,7 @@ trt = turtle.Turtle()
 wn = turtle.Screen()
 
 wn.bgpic("toucan.gif")
-wn.bgcolor("green")
+wn.bgcolor("black")
 
 trt.speed(0)
 
@@ -16,6 +16,7 @@ trt.ht()
 def buttonclick(x,y):
     print(f"({x}, {y})")
 
+# defines the quadratic Bézier curve
 def quadBeCurve(p0x, p0y, p1x, p1y, p2x, p2y):
 
   p0 = Vec2D(p0x, p0y)
@@ -41,6 +42,7 @@ def quadBeCurve(p0x, p0y, p1x, p1y, p2x, p2y):
 
       t += 0.05
 
+# defines cubic Bézier curve
 def cubeBeCurve(p0x, p0y, p1x, p1y, p2x, p2y, p3x, p3y):
 
   p0 = Vec2D(p0x, p0y)
@@ -67,20 +69,11 @@ def cubeBeCurve(p0x, p0y, p1x, p1y, p2x, p2y, p3x, p3y):
 
       t += 0.05
 
+# "binds" butotnclick to the window
 turtle.onscreenclick(buttonclick, 1)
  
 trt.color("white")
 
-# lines ______________________________
-
-trt.setheading(180)
-trt.penup()
-trt.forward(130)
-trt.left(90)
-trt.fd(20)
-trt.pendown()
-
-trt.left(80)
 
 # bottom of trunk
 quadBeCurve(-126, -34, -125, -38, -116, -42)
@@ -178,4 +171,14 @@ trt.goto(-129, -18)
 
 trt.goto(-126, -34)
 
-# bird :) !!!
+
+# bird !!!
+
+# tail 
+quadBeCurve(-50, -52, -54, -70, -46, -82)
+trt.goto(-35, -82)
+quadBeCurve(-35, -82, -29, -79, -32, -57)
+
+# body
+
+# head
