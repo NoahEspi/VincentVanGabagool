@@ -6,7 +6,7 @@ trt = turtle.Turtle()
 wn = turtle.Screen()
 
 wn.bgpic("toucan.gif")
-wn.bgcolor("blue")
+wn.bgcolor("green")
 
 trt.speed(0)
 
@@ -80,20 +80,23 @@ trt.left(90)
 trt.fd(20)
 trt.pendown()
 
-trt.fd(13)
 trt.left(80)
 
+# bottom of trunk
 quadBeCurve(-126, -34, -125, -38, -116, -42)
 quadBeCurve(-115, -43, -105, -36, -90, -47)
 quadBeCurve(-90, -46, -53, -47, -24, -61)
-quadBeCurve(-25, -60, 19, -52, 43, -65)
+quadBeCurve(-24, -61, 19, -52, 43, -65)
 quadBeCurve(43, -65, 75, -49, 115, -69)
-quadBeCurve(114, -68, 121, -57, 131, -65)
+quadBeCurve(115, -69, 121, -57, 131, -65)
 
 trt.goto(130, -49)
 
 quadBeCurve(130, -49, 74, -44, 104, -50)
 quadBeCurve(93, -47, 82, -49, 75, -43)
+
+
+# plant on right 
 quadBeCurve(76, -45, 83, -54, 81, -62)
 quadBeCurve(81, -62, 81, -53, 71, -45)
 quadBeCurve(71, -45, 66, -50, 64, -45)
@@ -122,6 +125,57 @@ quadBeCurve(106, -31, 86, -30, 78, -36)
 
 trt.goto(82, -39)
 
+cubeBeCurve(67, -33, 70, -18, 57, -8, 55, 1)
+quadBeCurve(60, -22, 51, -18, 48, -13)
 quadBeCurve(78, -36, 89, -40, 96, -45)
 quadBeCurve(96, -45, 85, -38, 73, -42)
 
+
+# top of trunk between plants
+trt.penup()
+trt.goto(60, -43)
+trt.pendown()
+trt.goto(39, -45)
+
+cubeBeCurve(39, -45, 23, -36, -7, -49, -18, -40)
+quadBeCurve(-18, -40, -23, -38, -31, -39)
+cubeBeCurve(-31, -39, -40, -45, -54, -34, -63, -32)
+quadBeCurve(-63, -32, -69, -35, -75, -30)
+
+trt.goto(-102, -22)
+
+
+# plant on left
+trt.goto(-105, -29)
+
+trt.penup()
+trt.goto(-111, -28)
+trt.pendown()
+
+quadBeCurve(-111, -28, -114, -7, -128, -5)
+quadBeCurve(-128, -5, -115, -4, -110, -14)
+quadBeCurve(-110, -14, -117, 8, -128, 15)
+quadBeCurve(-128, 15, -111, 8, -109, -1)
+quadBeCurve(-109, -1, -101, 21, -92, 21)
+
+trt.goto(-97, 8)
+trt.goto(-93, 10)
+trt.goto(-100, -6)
+
+quadBeCurve(-100, -6, -86, 5, -76, 4)
+
+trt.goto(-93, -4)
+
+quadBeCurve(-93, -4, -88, -4, -83, -6)
+quadBeCurve(-83, -6, -99, -9, -100, -16)
+
+trt.goto(-105, -29)
+
+trt.penup()
+trt.goto(-114, -19)
+trt.pendown()
+trt.goto(-129, -18)
+
+trt.goto(-126, -34)
+
+# bird :) !!!
