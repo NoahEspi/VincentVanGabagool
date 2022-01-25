@@ -5,7 +5,7 @@ import time
 trt = turtle.Turtle()
 wn = turtle.Screen()
 
-wn.bgpic("toucan.gif")
+# wn.bgpic("toucan.gif")
 wn.bgcolor("black")
 
 trt.speed(0)
@@ -25,7 +25,6 @@ def quadBeCurve(p0x, p0y, p1x, p1y, p2x, p2y):
 
   b = lambda t: p1 + (1 - t)**2 * (p0 - p1) + t**2 * (p2 - p1)
 
-  trt.color("white")
   trt.penup()
 
   trt.goto((p0x, p0y))
@@ -52,7 +51,6 @@ def cubeBeCurve(p0x, p0y, p1x, p1y, p2x, p2y, p3x, p3y):
 
   b = lambda t: (1 - t)**3 * p0 + 3 * (1 - t)**2 * t * p1 + 3 * (1 - t) * t**2 * p2 + t**3 * p3
 
-  trt.color("white")
   trt.penup()
 
   trt.goto((p0x, p0y))
@@ -71,11 +69,10 @@ def cubeBeCurve(p0x, p0y, p1x, p1y, p2x, p2y, p3x, p3y):
 
 # "binds" butotnclick to the window
 turtle.onscreenclick(buttonclick, 1)
- 
-trt.color("white")
 
 
 # bottom of trunk
+trt.color("gray")
 quadBeCurve(-126, -34, -125, -38, -116, -42)
 quadBeCurve(-115, -43, -105, -36, -90, -47)
 quadBeCurve(-90, -46, -53, -47, -24, -61)
@@ -90,6 +87,7 @@ quadBeCurve(93, -47, 82, -49, 75, -43)
 
 
 # plant on right 
+trt.color("lime green")
 quadBeCurve(76, -45, 83, -54, 81, -62)
 quadBeCurve(81, -62, 81, -53, 71, -45)
 quadBeCurve(71, -45, 66, -50, 64, -45)
@@ -125,6 +123,7 @@ quadBeCurve(96, -45, 85, -38, 73, -42)
 
 
 # top of trunk between plants
+trt.color("gray")
 trt.penup()
 trt.goto(60, -43)
 trt.pendown()
@@ -139,6 +138,7 @@ trt.goto(-102, -22)
 
 
 # plant on left
+trt.color("lime green")
 trt.goto(-105, -29)
 
 trt.penup()
@@ -161,9 +161,12 @@ trt.goto(-93, -4)
 
 quadBeCurve(-93, -4, -88, -4, -83, -6)
 quadBeCurve(-83, -6, -99, -9, -100, -16)
+quadBeCurve(-100, -16, -107, -31, -111, -28)
 
 trt.goto(-105, -29)
 
+#left corner of trunk after plant
+trt.color("gray")
 trt.penup()
 trt.goto(-114, -19)
 trt.pendown()
@@ -175,10 +178,61 @@ trt.goto(-126, -34)
 # bird !!!
 
 # tail 
+trt.color("white")
 quadBeCurve(-50, -52, -54, -70, -46, -82)
 trt.goto(-35, -82)
 quadBeCurve(-35, -82, -29, -79, -32, -57)
 
 # body
+quadBeCurve(-54, -37, -58, -18, -51, -2)
+quadBeCurve(-51, -2, -42, 34, -25, 30)
+quadBeCurve(-34, -37, -23, -23, -24, -5)
 
-# head
+# feet
+trt.color("red")
+quadBeCurve(-47, -38, -40, -34, -32, -39)
+quadBeCurve(-32, -39, -39, -43, -47, -38)
+
+# beak
+trt.color("lawngreen")
+quadBeCurve(-25, 30, 9, 29, 10, 6)
+quadBeCurve(10, 6, 1, 15, -21, 13)
+cubeBeCurve(-25, 30, -22, 24, -32, 18, -21, 13)
+
+#line in middle of beak
+trt.color("orange")
+quadBeCurve(10, 6, -9, 22, -24, 24)
+
+# red part on beak
+trt.color("red")
+quadBeCurve(2, 11, -2, 17, 6, 18)
+
+# line under beak
+trt.color("white")
+trt.penup()
+trt.goto(-20, 14)
+trt.pendown()
+trt.goto(-22, 8)
+
+# chest
+quadBeCurve(-23, -7, -18, 2, -22, 8)
+
+# yellow part around eye
+trt.color("gold")
+quadBeCurve(-24, 28, -38, 28, -37, 17)
+
+# yellow part on chest
+cubeBeCurve(-37, 17, -62, -4, -16, -19, -23, 8)
+
+# green part around eye
+trt.color("lawngreen")
+cubeBeCurve(-23, 27, -35, 28, -36, 18, -26, 20)
+
+# eye
+trt.color("white")
+trt.penup()
+trt.goto(-29, 23)
+trt.dot()
+
+trt.goto(37, 49)
+trt.write("caw caw")
