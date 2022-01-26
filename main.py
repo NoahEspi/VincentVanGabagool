@@ -8,6 +8,8 @@ wn = turtle.Screen()
 # wn.bgpic("toucan.gif")
 wn.bgcolor("black")
 
+wn.setup(300, 200)
+
 trt.speed(0)
 
 trt.ht()
